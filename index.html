@@ -65,8 +65,8 @@ h2::after { content:""; flex:1; border-top:1px dashed var(--line); }
 h2 a { order:3; font-weight:400; font-size:14px; }
 
 /* featured projects */
-.feat + .feat { margin-top:46px; }
-.shot { display:block; aspect-ratio:16/9; border:1px solid var(--line); border-radius:3px; overflow:hidden; background:var(--box); margin-bottom:16px; }
+.feat + .feat { margin-top:64px; }
+.shot { display:block; aspect-ratio:16/9; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:var(--box); margin-bottom:18px; }
 .shot:hover { background:var(--box); border-color:var(--acc); }
 .shot img { display:block; width:100%; height:100%; object-fit:cover; }
 .feat .top { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:0 2ch; }
@@ -87,8 +87,14 @@ footer { margin-top:64px; padding:16px 0 48px; border-top:1px dashed var(--line)
 /* wide screens: photo beside the intro, project image beside its text */
 @media (min-width:860px) {
   .me { float:right; width:440px; aspect-ratio:4/3; object-position:70% 50%; margin:4px 0 16px 44px; }
-  .feat { display:flow-root; }
-  .shot { float:left; width:440px; margin:4px 36px 8px 0; }
+  /* big project image across the full column. Under it: name and category on one line, then tagline + links on the left, description on the right */
+  .feat { display:grid; grid-template-columns:minmax(0,5fr) minmax(0,6fr); column-gap:56px; grid-template-areas:"img img" "top top" "tag desc" "by desc" "acts desc"; grid-template-rows:auto auto auto auto 1fr; }
+  .feat > .shot { grid-area:img; margin-bottom:22px; }
+  .feat > .top { grid-area:top; padding-bottom:12px; margin-bottom:14px; border-bottom:1px dashed var(--line); }
+  .feat > p:nth-child(3) { grid-area:tag; margin-top:0; font-weight:700; }
+  .feat > p:nth-child(4) { grid-area:desc; margin-top:0; font-size:15px; line-height:1.7; color:var(--ink); }
+  .feat > p:nth-child(5) { grid-area:by; } .feat > .acts { grid-area:acts; align-self:start; margin-top:10px; }
+  .feat h3 { font-size:21px; }
 }
 
 @media (max-width:560px) {
@@ -203,7 +209,7 @@ nav button:hover { color:var(--acc); }
   </article>
 
   <article class="feat">
-    <a class="shot" href="https://declare-lab.github.io/RoboQuest/"><img src="assets/roboquest.jpg" alt="RoboQuest Odd Parcel task: a robot arm loading parcels onto a balance" loading="lazy" referrerpolicy="no-referrer"></a>
+    <a class="shot" href="https://declare-lab.github.io/RoboQuest/"><img src="assets/roboquest-2.jpg" alt="RoboQuest Odd Parcel task: a robot arm loading parcels onto a balance" loading="lazy" referrerpolicy="no-referrer"></a>
     <div class="top"><h3>RoboQuest</h3><span class="s">Embodied agents, 2026</span></div>
     <p>Can physical agents search, inspect and test?</p>
     <p class="s">Ten mobile-manipulation tasks where the answer can only be found by interacting with the scene. The best frontier model succeeds in 23% of episodes.</p>
