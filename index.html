@@ -118,7 +118,7 @@ nav button:hover { color:var(--acc); }
 /* Day links: ink text with an amber underline; in the intro they get an amber marker instead. Night links stay amber text. */
 [data-theme=light] { --hl:#f4d5a8; --ul:#dc9444; --hov:#efc088; }
 [data-theme=light] a:not(nav a):not(.shot) { color:var(--ink); text-decoration-color:var(--ul); text-decoration-thickness:2px; }
-[data-theme=light] header a { text-decoration:none; background:linear-gradient(transparent 58%, var(--hl) 58%); }
+[data-theme=light] header a:not(.links a) { text-decoration:none; background:linear-gradient(transparent 58%, var(--hl) 58%); }
 [data-theme=light] .k { text-decoration:none; background:linear-gradient(transparent 58%, var(--hl) 58%); }
 [data-theme=light] a:not(nav a):not(.shot):hover { background:var(--hov); color:var(--ink); text-decoration-color:transparent; }
 [data-theme=light] ::selection { background:var(--hov); color:var(--ink); }
@@ -186,7 +186,7 @@ nav button:hover { color:var(--acc); }
   </div>
       <h1>Renhang Liu</h1>
       <p class="s">Ph.D. @ NTU Singapore / prev. AgiBot Research</p>
-      <p class="statement">Toward general-purpose, real-time autonomy in the physical world.</p>
+      <p class="statement">Toward general, real-time autonomy in the physical world.</p>
   <p>I'm a first-year Ph.D. student at <a href="https://www.ntu.edu.sg/">NTU</a>, advised by <a href="https://soujanyaporia.github.io/research/">Prof. Soujanya Poria</a>. In 2026 I worked with the Genie Envisioner team at AgiBot Research on <a href="https://ge-act-v2.github.io/">GE-Act 2.0</a>.</p>
   <p>I care about building autonomous systems that are <u class="k">general</u> across the diversity of the physical world, <u class="k">react in real time</u>, and can <u class="k">learn and adapt</u> to unfamiliar tasks and environments.</p>
   <p class="links">
